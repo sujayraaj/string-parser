@@ -20,8 +20,12 @@ npm install styled-string-parser
 ## Use
 
 ``` typescript
-import { styledStringParser } from 'styled-string-parser'
-// TODO: describe usage
+import styledStringParser from 'styled-string-parser'
+
+console.log(styledStringParser('{`World`<a:b|c;d:e/>}')))
+/* Output:
+* [ { content: 'World', properties: { a: 'c', d: 'e' } } ]
+*/
 ```
 
 ## Related
