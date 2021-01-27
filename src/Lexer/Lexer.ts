@@ -45,10 +45,10 @@ class Lexer {
             return token;
         }
 
-        if(ch === '\/' && this.text[this.index+1] === '>') {
+        if(this.text.slice(this.index, this.index+2) === TokenType.END_TAG) {
             this.index+=2
             let token: Token = {
-                value: ch + this.text[this.index+1],
+                value: TokenType.END_TAG as string,
                 tokenType: TokenType.END_TAG
             }
             return token;
@@ -66,8 +66,19 @@ class Lexer {
                 tokenType: Object.values(TokenType).find(type => type === ch),
                 value: ch
             }
-    
+
             return token;    
+        }
+        {
+            if(!ch) {
+                return null;
+            }
+            this.index++;
+            let token: Token = {
+                value: ch,
+                tokenType: TokenType.TEXT
+            }
+            return token;
         }
         return null
     }
