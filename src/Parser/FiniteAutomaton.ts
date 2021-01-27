@@ -81,10 +81,14 @@ class FiniteAutomaton {
     private currentState = 1
 
     transit = (token: Token): number => {
-        let state = this.automatonMap[this.currentState][token.tokenType]
+        const innerMap = this.automatonMap[this.currentState];
+
+        let state = innerMap ? innerMap[token.tokenType] : this.initialState;
+        // console.log('FOR TOKEN::::', JSON.stringify(token), ' STATE-TRANSITION:::: ', this.currentState, ' =>> ', state, ' isUndefined ? ', !state, ' default: ', state || this.initialState ) ;
         this.currentState = state || this.initialState;
         if(this.currentState === this.initialState) {
-            let val = this.automatonMap[this.currentState][token.tokenType]
+            const innerMap = this.automatonMap[this.currentState];
+            let val = innerMap ? innerMap[token.tokenType] : this.initialState
             this.currentState = val || this.initialState;
         }
         return this.currentState
