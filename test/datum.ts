@@ -141,6 +141,7 @@ export const testStrings = {
     125: ' { {`World`<a:b|c;d:e/>} } { {`Mars`<a:b|c;d:e/>} } ',
     //
     126:  'Hello { `World` < text-decoration: underline />}, How are you ?',
+    127:  'Hello { `World` < text-decoration: underline; text-color: #acbbea />}, How are you ?',
 
 }
 
@@ -864,6 +865,11 @@ export const testResults: any = {
     126: [
         { content: 'Hello ', properties: {} },
         { content: 'World', properties: { 'text-decoration': 'underline' } },
+        { content: ', How are you ?', properties: {} },
+    ],
+    127: [
+        { content: 'Hello ', properties: {} },
+        { content: 'World', properties: { 'text-decoration': 'underline', 'text-color': '#acbbea' } },
         { content: ', How are you ?', properties: {} },
     ]
 }

@@ -10,6 +10,12 @@ Object.keys(testStrings).map((key:any,index) => {
         const testString = (testStrings as any)[key as any];
         const exp = JSON.stringify(testResults[key as any]);
         const got =  JSON.stringify(styledStringParser(testString));
-        test.assert(exp === got);        
+        if(exp !== got) {
+            console.log('test ::: ', index);
+            console.log('expected: ', exp);
+            console.log('got: ', got);
+            test.assert(false);
+        }
+        test.assert(true);        
     })
 });
