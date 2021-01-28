@@ -1,6 +1,6 @@
 {
   "name": "styled-string-parser",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A to and fro parsing utility for styled strings",
   "homepage": "https://github.com/sujayraaj/string-parser",
   "bugs": {
