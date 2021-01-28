@@ -5,6 +5,7 @@
 
 import {tokenize, parse} from './utils';
 
-const styledStringParser = (str: string) => parse(tokenize(str))
+export const styledStringParser = (str: string) => parse(tokenize(str))
+
 
 export default styledStringParser;
