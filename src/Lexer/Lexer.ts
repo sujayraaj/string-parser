@@ -4,7 +4,7 @@ const isAlphaNumeric = function(str:string|undefined) {
     if(!str) {
         return false;
     }
-    var regExp = /^[A-Za-z0-9]+$/;
+    var regExp = /^[A-Za-z0-9\-]+$/;
     return (str.match(regExp));
   };
   
